@@ -43,7 +43,13 @@ const UserSchema=new mongoose.Schema({
             type:mongoose.Schema.Types.ObjectId,
             ref:"CourseProgressModel"     //ref to CourseProgress model which contains progress of al coureses of a user
         }
-    ]
+    ],
+    token:{
+        type:String
+    },
+    resetPasswordExpires:{
+        type:Date,
+    }
 
 })
 
