@@ -26,7 +26,8 @@ const createTag=async(req,res)=>{
 
         res.json({
             success:true,
-            message:"Tag created successfully!"
+            message:"Tag created successfully!",
+            tagDetails
         })
 
     } catch (error) {
