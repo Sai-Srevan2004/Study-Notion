@@ -1,8 +1,5 @@
 const cloudinary=require('cloudinary').v2
 
-
-
-
 const uploadToCloudinary=async(file,folder,height,quality)=>{
     const options={folder}
     if(!height)

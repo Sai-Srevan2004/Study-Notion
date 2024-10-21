@@ -1,5 +1,5 @@
 const CourseModel =require('../Models/CourseModel')
-const TagModel=require('../Models/TagModel')
+const categoryModel=require('../Models/categoryModel')
 const UserModel=require('../Models/UserModel')
 const {uploadToCloudinary}=require('../Utils/imageUploader')
 
@@ -7,11 +7,11 @@ const {uploadToCloudinary}=require('../Utils/imageUploader')
 const createCourse=async(req,res)=>{
     try {
         //fecth data from req,body
-        const {courseName,courseDescription,whatYouWillLearn,price,tag}=req.body
+        const {courseName,courseDescription,whatYouWillLearn,price,category}=req.body
         //get file
 const thumbnail=req.files.thumbnailImage
         //validation
-   if(!courseName || !courseDescription || !whatYouWillLearn || !price || !tag || !thumbnail)
+   if(!courseName || !courseDescription || !whatYouWillLearn || !price || !category || !thumbnail)
    {
     return res.json(
         {
@@ -36,13 +36,13 @@ const thumbnail=req.files.thumbnailImage
 
    //tag validation
 
-   const tagDetails=await TagModel.findById(tag)
+   const categoryDetails=await categoryModel.findById(tag)
 
-   if(!tagDetails)
+   if(!categoryDetails)
    {
     return res.json({
         success:false,
-        message:"tag not valid!"
+        message:"category not valid!"
     })
    }
 
@@ -58,7 +58,7 @@ const thumbnail=req.files.thumbnailImage
         instructor:instructorDetails._id,
         whatYouWillLearn,
         price,
-        tag:tagDetails._id,
+        category:categoryDetails._id,
         thumbnail:thumbnailImage.secure_url
 
     })
@@ -76,8 +76,8 @@ const thumbnail=req.files.thumbnailImage
     )
 //update tag document also 
   
-await TagModel.findByIdAndUpdate(
-    {_id:tagDetails>_id},
+await categoryModel.findByIdAndUpdate(
+    {_id:categoryDetails.$clone_id},
     {
         $push:{
            courses:courseCreated._id 

@@ -6,11 +6,10 @@
 const UserModel = require('../Models/UserModel')
 const OtpModel = require('../Models/OtpModel')
 const ProfileModel = require('../Models/ProfileModel')
-const otpGenerator = require('otp-generator');
+const otpGenerator = require('otp-generator')
 const bcrypt = require('bcrypt')
 const jwt=require('jsonwebtoken')
-const crypto = require('crypto');
-const { log } = require('console');
+const crypto = require('crypto')
 require('dotenv').config()
 
 //sendOTp

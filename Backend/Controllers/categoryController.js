@@ -1,7 +1,7 @@
-const TagModel =require('../Models/TagModel')
+const categoryModel =require('../Models/categoryModel')
 
-//createtag controller
-const createTag=async(req,res)=>{
+//createcategory controller
+const createCategory=async(req,res)=>{
     try {
         //fecthing data from frontend
         const {name,description}=req.body
@@ -19,15 +19,15 @@ const createTag=async(req,res)=>{
 
         //create entry in db
 
-        const tagDetails=await TagModel.create({
+        const categoryDetails=await categoryModel.create({
             name,
             description
         })
 
         res.json({
             success:true,
-            message:"Tag created successfully!",
-            tagDetails
+            message:"category created successfully!",
+            categoryDetails
         })
 
     } catch (error) {
@@ -39,16 +39,16 @@ const createTag=async(req,res)=>{
 }
 
 
-//getalltags function 
+//getallcategorys function 
 
-const getAllTags=async(req,res)=>{
+const getAllCategorys=async(req,res)=>{
     try {
-        const allTags=await TagModel.find({},{name:true,description:true})
+        const allCategorys=await categoryModel.find({},{name:true,description:true})
         
         res.json({
             success:true,
-            message:"All tags returned Succesfully!",
-            allTags
+            message:"All categorys returned Succesfully!",
+            allCategorys
         })
 
     } catch (error) {
@@ -59,5 +59,7 @@ const getAllTags=async(req,res)=>{
     }
 }
 
+//
 
-module.exports={getAllTags,createTag}
+
+module.exports={getAllCategorys,createCategory}
