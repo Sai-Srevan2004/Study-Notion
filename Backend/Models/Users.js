@@ -1,4 +1,5 @@
 const mongoose=require('mongoose')
+const { resetPassword } = require('../Controllers/ResetPassword')
 
 const userSchema=new mongoose.Schema({
     firstName:{
@@ -48,6 +49,12 @@ const userSchema=new mongoose.Schema({
     }],
     image:{
         type:String
+    },
+    token:{
+        type:String
+    },
+    resetPasswordExpires:{
+        type:Date
     }
 })
 
