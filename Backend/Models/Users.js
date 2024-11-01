@@ -1,7 +1,11 @@
 const mongoose=require('mongoose')
 
 const userSchema=new mongoose.Schema({
-    userName:{
+    firstName:{
+        type:String,
+        required:true
+    },
+    lastName:{
         type:String,
         required:true
     },
@@ -41,7 +45,10 @@ const userSchema=new mongoose.Schema({
     courseProgress:[{
         type:mongoose.Schema.Types.ObjectId,
         ref:"CourseProgress"
-    }]
+    }],
+    image:{
+        type:String
+    }
 })
 
 
