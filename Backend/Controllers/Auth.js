@@ -287,9 +287,7 @@ const changePassword=async(req,res)=>{
         }
     
         // Return success response
-        return res
-          .status(200)
-          .json({ success: true, message: "Password updated successfully" })
+        return res.json({ success: true, message: "Password updated successfully" })
       } catch (error) {
         // If there's an error updating the password, log the error and return a 500 (Internal Server Error) error
         console.error("Error occurred while updating password:", error)

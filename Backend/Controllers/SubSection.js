@@ -49,9 +49,64 @@ const createSubSection = async (req, res) => {
     }
 };
 
-//HW: updateSubSection
+// updateSubSection
+const updateSubSection=async(req,res)=>
+{
+  try {
+    //get data from req.body
+    const {subSectionId, title, timeDuration, description} = req.body;
+    //find the section by id
+    const updateSubSection=await SubSection.findByIdAndUpdate({_id:subSectionId},{
+         title,
+         timeDuration,
+         description, 
+    })
+
+    return res.json({
+        success:true,
+        message:"SubSection updated Successfully!",
+        updateSubSection
+    })
+    
+  } catch (error) {
+    return res.json({
+        success:false,
+        message:"Something wrong while updating subsections of courses"
+    })
+  }
+}
 
 //HW:deleteSubSection
+const deleteSubSection=async(req,res)=>{
+    try {
+        //get subSectionId
+        const {subSectionId,sectionId}=req.body
+
+        //find the subsection using the id
+
+        const deleteSubSection=await SubSection.findByIdAndDelete({_id:subSectionId})
+
+        //now remove subsection from the array in Section model
+        await Section.findByIdAndUpdate({_id:sectionId},{
+            $pull:{
+                subSection:deleteSubSection
+            }
+        })
+
+        return res.json({
+            success:true,
+            message:"Subsection deleted Successfully!",
+            deleteSubSection
+        })
 
 
-module.exports={createSubSection}
+    } catch (error) {
+        return res.json({
+            success:false,
+            message:"Something wrong while deleting subsections of courses"
+        })
+    }
+}
+
+
+module.exports={createSubSection,updateSubSection,deleteSubSection}
