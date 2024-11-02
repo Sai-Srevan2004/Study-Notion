@@ -214,7 +214,7 @@ const login = async (req, res) => {
             role:isExist.accountType
         }
 
-        const token=jwt.sign(payload,process.env.JWT_SECRET,{
+        const token=jwt.sign(payLoad,process.env.JWT_SECRET,{
             expiresIn:'2h'
         })
        
