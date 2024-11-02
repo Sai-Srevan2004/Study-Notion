@@ -92,14 +92,25 @@ const createCourse=async(req,res)=>{
 //get all courses
 
 const getAllCourses=async(req,res)=>{
-   try {
-       
-   } catch (error) {
+    try {
+        const allCourses = await Course.find({});
+
+        return res.json({
+            success:true,
+            message:'Data for all courses fetched successfully',
+            data:allCourses,
+        })
+
+}
+catch(error) {
+    console.log(error);
     return res.json({
         success:false,
-        message:"Somwthing wrong while getting all courses!"
+        message:'Cannot Fetch course data',
+        error:error.message,
     })
-   }
+}
+
 }
 
 
