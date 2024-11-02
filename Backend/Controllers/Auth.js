@@ -137,6 +137,12 @@ const signUp = async (req, res) => {
         const hashedPassword =await bcrypt.hash(password,10)
 
         //entry in db of user
+      
+        let approved = "";
+		approved === "Instructor" ? (approved = false) : (approved = true);
+
+
+
                //create empty profile in db for additional detals
                const profileDetails=await Profile.create({
                 gender:null,

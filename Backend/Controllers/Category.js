@@ -1,8 +1,8 @@
-const Tag=require('../Models/Tag')
+const Category=require('../Models/Category')
 
 //create Tag only admin can create tags 
 
-const createTag=async(req,res)=>{
+const createCategory=async(req,res)=>{
    try {
     //get data from req.body
     const {name,description}=req.body
@@ -15,16 +15,16 @@ const createTag=async(req,res)=>{
         })
     }
     //create tag in model
-    const tagDetails=await Tag.create({
+    const categoryDetails=await Category.create({
         name,
         description
     })
 
-    console.log(tagDetails)
+    console.log(categoryDetails)
 
     return res.json({
         success:true,
-        message:"Tag created Successfully!",
+        message:"category created Successfully!",
     })
     
    } catch (error) {
@@ -38,15 +38,15 @@ const createTag=async(req,res)=>{
 
 //getAllTags for instructor to choose a tag and create a course based on tags available
 
-const getAllTags=async(req,res)=>{
+const getAllCategorys=async(req,res)=>{
     try {
         //get all tags
-        const allTags=await Tag.find({});
+        const allCategorys=await Category.find({});
 
         return res.json({
             success:true,
             message:"All tags are got!",
-            allTags:allTags
+            allTags:allCategorys
         })
     } catch (error) {
         return res.json({
@@ -56,4 +56,4 @@ const getAllTags=async(req,res)=>{
     }
 }
 
-module.exports={createTag,getAllTags}
+module.exports={createCategory,getAllCategorys}

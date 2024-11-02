@@ -1,5 +1,5 @@
 const Course=require('../Models/Courses')
-const Tag=require('../Models/Tag')
+const Category=require('../Models/Category')
 const User=require('../Models/Users')
 const {uploadImageToCloudinary}=require("../Utils/cloudinary")
 
@@ -20,11 +20,11 @@ const createCourse=async(req,res)=>{
         }
 
         //data fetch from req.body
-        const {courseName,courseDescription,whatYouWillLearn,price,tag}=req.body
+        const {courseName,courseDescription,whatYouWillLearn,price,tag,category,status}=req.body
         //get file from req.files
         const thumbnail=req.files.thumbnailFile
        //check validation
-       if(!courseName || !courseDescription || !whatYouWillLearn || !price || !tag || !thumbnail)
+       if(!courseName || !courseDescription || !whatYouWillLearn || !price || !category || !thumbnail)
        {
              return res.json({
                 success:false,
@@ -32,14 +32,18 @@ const createCourse=async(req,res)=>{
              })
        }
 
-       //validation of tag whether it is actually created by admin or not
-       const tagDetails=await Tag.findById(tag);
+       if (!status || status === undefined) {
+        status = "Draft";
+      }
 
-       if(!tagDetails)
+       //validation of tag whether it is actually created by admin or not
+       const categoryDetails=await Category.findById(tag);
+
+       if(!categoryDetails)
        {
         return res.json({
             success:false,
-            message:"Tag is not valid!"
+            message:"Category is not valid!"
         })
        }
        //upload image to cloudinary // here image is thumbnail
@@ -52,6 +56,7 @@ const createCourse=async(req,res)=>{
         whatYouWillLearn,
         price,
         tag,
+        category,
         thumbnail:thumbnailImage.secure_url
 
        })
@@ -66,7 +71,7 @@ const createCourse=async(req,res)=>{
        )
 
        //tag array updation
-       await Tag.findByIdAndUpdate({_id:tag0},{
+       await Category.findByIdAndUpdate({_id:category},{
            $push:{
                course:newCourse._id
            }
@@ -74,6 +79,7 @@ const createCourse=async(req,res)=>{
 
        return res.json({
         success:true,
+        data:newCourse,
         message:"Course Created Successfully!"
        })
 

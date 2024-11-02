@@ -23,8 +23,13 @@ const createSection = async (req, res) => {
                                                 }
                                             },
                                             {new:true},
-                                        );
-        //HW: use populate to replace sections/sub-sections both in the updatedCourseDetails
+                                        ).populate({
+                                            path: "courseContent",
+                                            populate: {
+                                                path: "subSection",
+                                            },
+                                        })
+                                        .exec();
         //return response
         return res.json({
             success:true,

@@ -31,7 +31,7 @@ const createSubSection = async (req, res) => {
                                                         {$push:{
                                                             subSection:subSectionDetails._id,
                                                         }},
-                                                        {new:true});
+                                                        {new:true}).populate("subSection");
             //HW: log updated section here, after adding populate query
             //return response
             return res.status(200).json({
