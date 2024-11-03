@@ -119,5 +119,55 @@ catch(error) {
 
 }
 
+//getCourseDetails
+const getCourseDetails = async (req, res) => {
+    try {
+            //get id
+            const {courseId} = req.body;
+            //find course details
+            const courseDetails = await Course.find(
+                                        {_id:courseId})
+                                        .populate(
+                                            {
+                                                path:"instructor",
+                                                populate:{
+                                                    path:"additionalDetails",
+                                                },
+                                            }
+                                        )
+                                        .populate("category")
+                                        .populate("ratingAndreviews")
+                                        .populate({
+                                            path:"courseContent",
+                                            populate:{
+                                                path:"subSection",
+                                            },
+                                        })
+                                        .exec();
 
-module.exports={createCourse,getAllCourses}
+                //validation
+                if(!courseDetails) {
+                    return res.json({
+                        success:false,
+                        message:`Could not find the course with ${courseId}`,
+                    });
+                }
+                //return response
+                return res.json({
+                    success:true,
+                    message:"Course Details fetched successfully",
+                    data:courseDetails,
+                })
+
+    }
+    catch(error) {
+        console.log(error);
+        return res.json({
+            success:false,
+            message:error.message,
+        });
+    }
+}
+
+
+module.exports={createCourse,getAllCourses,getCourseDetails}
