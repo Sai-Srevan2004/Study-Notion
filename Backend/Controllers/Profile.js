@@ -1,11 +1,12 @@
 const Profile = require("../Models/Profile");
 const User = require("../Models/Users");
+const {uploadImageToCloudinary}=require('../Utils/cloudinary')
 
 
 const updateProfile = async (req, res) => {
     try{
             //get data
-            const {dateOfBirth="", about="", contactNumber, gender} = req.body;
+            const {dob="", about="", contactNumber, gender} = req.body;
             //get userId
             const id = req.user.id;
             //validation
@@ -21,7 +22,7 @@ const updateProfile = async (req, res) => {
             const profileDetails = await Profile.findById(profileId);
 
             //update profile
-            profileDetails.dateOfBirth = dateOfBirth;
+            profileDetails.dob = dob;
             profileDetails.about = about;
             profileDetails.gender = gender;
             profileDetails.contactNumber = contactNumber;

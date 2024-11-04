@@ -4,6 +4,7 @@ const otpGenerator = require("otp-generator")
 const bcrypt=require('bcrypt')
 const jwt=require('jsonwebtoken')
 const mailSender=require('../Utils/mailSender')
+const Profile=require('../Models/Profile')
 
 //otp send function
 
@@ -24,7 +25,7 @@ const sendOtp = async (req, res) => {
         const checkUserPresent = await User.findOne({ email })
 
         //if user already exists then return res
-        if (!checkUserPresent) {
+        if (checkUserPresent) {
             return res.json({
                 success: false,
                 message: "User already exists!"
@@ -71,6 +72,7 @@ const sendOtp = async (req, res) => {
             message: "Otp sent Successfully!"
         })
     } catch (error) {
+
         return res.json({
             success: false,
             message: "somethng wrong while sending Otp!"
@@ -124,8 +126,9 @@ const signUp = async (req, res) => {
             })
         }
 
-        if(otp!==recentOtp)
-        {
+        if(otp!==recentOtp.otp)
+        {   console.log("otp:",otp)
+            console.log("recentotp:",recentOtp.otp)
             return res.json({
                 success:false,
                 message:"Invalid Otp!"
@@ -170,6 +173,7 @@ const signUp = async (req, res) => {
       })
 
     } catch (error) {
+        console.log(error.message)
      return res.json({
         success:false,
         message:"User Registration Failed! please try again later"
@@ -229,6 +233,9 @@ const login = async (req, res) => {
             expires:new Date(Date.now()+3*24*60*60*1000),
             httpOnly:true
         }
+
+        //undeifing password
+        isExist.password=undefined
 
         //if all correct generate jwt token
         return res.cookie("token",token,options).json({
