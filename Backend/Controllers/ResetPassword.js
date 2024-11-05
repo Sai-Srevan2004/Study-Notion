@@ -36,6 +36,7 @@ const resetPasswordToken = async (req, res) => {
       success: true,
       message:
         "Email Sent Successfully, Please Check Your Email to Continue Further",
+        token:token
     })
   } catch (error) {
     return res.json({

@@ -20,15 +20,15 @@ const createCourse=async(req,res)=>{
         }
 
         //data fetch from req.body
-        const {courseName,courseDescription,whatYouWillLearn,price,tag,category,status}=req.body
+        let {courseName,courseDescription,whatYouWillLearn,price,tag,category,status}=req.body
         //get file from req.files
         const thumbnail=req.files.thumbnailFile
        //check validation
        if(!courseName || !courseDescription || !whatYouWillLearn || !price || !category || !thumbnail)
-       {
+       {   console.log("----------",courseName,courseDescription,whatYouWillLearn,tag,price,category,thumbnail)
              return res.json({
                 success:false,
-                message:"All fileds required!"
+                message:"All fileds required please!"
              })
        }
 
@@ -37,7 +37,7 @@ const createCourse=async(req,res)=>{
       }
 
        //validation of tag whether it is actually created by admin or not
-       const categoryDetails=await Category.findById(tag);
+       const categoryDetails=await Category.findById(category);
 
        if(!categoryDetails)
        {
@@ -57,8 +57,8 @@ const createCourse=async(req,res)=>{
         price,
         tag,
         category,
-        thumbnail:thumbnailImage.secure_url
-
+        thumbnail:thumbnailImage.secure_url,
+         status
        })
 
        //update array in instructor
@@ -84,9 +84,10 @@ const createCourse=async(req,res)=>{
        })
 
     } catch (error) {
+    
         return res.json({
             success:false,
-            message:"Something wrong while creating course!"
+            message:error.message
         })
     }
 }
