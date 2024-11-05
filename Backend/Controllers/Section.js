@@ -83,7 +83,9 @@ const updateSection = async (req,res) => {
 const deleteSection = async (req,res) => {
     try {
         //get ID - assuming that we are sending ID in params
+        console.log(req.params.sectionId)
         const {sectionId} = req.params
+        
         //use findByIdandDelete
         await Section.findByIdAndDelete(sectionId);
         //TODO[Testing]: do we need to delete the entry from the course schema ??

@@ -8,8 +8,10 @@ const createSubSection = async (req, res) => {
     try{
             //fecth data from Req body
             const {sectionId, title, timeDuration, description} = req.body;
+
             //extract file/video
             const video  = req.files.videoFile;
+            
             //validation
             if(!sectionId || !title || !timeDuration || !description || !video) {
                 return res.status(400).json({
@@ -20,12 +22,15 @@ const createSubSection = async (req, res) => {
             //upload video to cloudinary
             const uploadDetails = await uploadImageToCloudinary(video, process.env.FOLDER_NAME);
             //create a sub-section
+            console.log("videourl",uploadDetails.secure_url)
+            
             const subSectionDetails = await SubSection.create({
                 title:title,
                 timeDuration:timeDuration,
                 description:description,
                 videoUrl:uploadDetails.secure_url,
             })
+            console.log("Subsection:",subSectionDetails)
             //update section with this sub section ObjectId
             const updatedSection = await Section.findByIdAndUpdate({_id:sectionId},
                                                         {$push:{

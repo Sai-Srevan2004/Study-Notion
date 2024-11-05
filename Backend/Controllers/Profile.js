@@ -49,9 +49,12 @@ const updateProfile = async (req, res) => {
 const deleteAccount = async (req, res) => {
     try{
         //get id 
+        console.log(req.user)
         const id = req.user.id;
+
         //validation
         const userDetails = await User.findById(id);
+        console.log(userDetails)
         if(!userDetails) {
             return res.json({
                 success:false,
@@ -74,7 +77,7 @@ const deleteAccount = async (req, res) => {
     catch(error) {
         return res.json({
             success:false,
-            message:'User cannot be deleted successfully',
+            message:`User cannot be deleted ${error.message}`,
         });
     }
 };

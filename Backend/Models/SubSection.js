@@ -8,10 +8,10 @@ const subSectionSchema=new mongoose.Schema({
         type:String
     },
     description:{
-        typr:String
+        type:String
     },
     videoUrl:{
-        typr:String
+        type:String
     }
 })
 
