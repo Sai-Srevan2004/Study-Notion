@@ -4,7 +4,7 @@ import { Outlet } from 'react-router-dom'
 
 const AppLayout = () => {
   return (
-    <div>
+    <div className='App-layout'>
       <Outlet></Outlet>
     </div>
   )
