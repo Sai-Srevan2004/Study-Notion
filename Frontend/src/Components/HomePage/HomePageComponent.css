@@ -91,7 +91,291 @@
 }
 
 
+/*Time line component*/
 
+.time-line-section
+{
+  width: 100%;
+}
+
+.time-line-child
+{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3rem 1rem;
+  gap: 10px;
+}
+
+.time-line-first
+{
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  min-height: 500px;
+}
+
+.time-line-map
+{
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.time-line-map .txt
+{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.time-line-logo
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: whitesmoke;
+}
+
+.time-line-second{
+  height: 550px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.time-line-second img{
+  height: 90%;
+  width: 99%;
+}
+
+.time-line-abs
+{
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  background-color: rgb(2, 78, 2);
+  width: 100%;
+  color: white;
+  display: flex;
+  align-items: center;
+justify-content: center;
+  padding: 33px;
+}
+
+.time-line-abs .number{
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.time-line-abs .abs-div1
+{
+   display: flex;
+   gap: 20px;
+   align-items: center;
+   padding-right: 5rem;
+   border-right-style: solid;
+}
+
+.time-line-abs .abs-div2
+{
+  display: flex;
+  padding-left: 5rem;
+  align-items: center;
+  gap: 20px;
+}
+
+
+/*LanguageLearningSection css*/
+.learning-language-section
+{
+  width: 100%;
+  margin-top: 40px;
+}
+
+.learning-language-child
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cross-imgs
+{
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.learning-language-child .heading
+{
+   font-size: 31px;
+   font-weight: bold;
+   margin-bottom: 10px;
+}
+
+.learning-language-child .para
+{
+  width: 70%;
+  text-align: center;
+}
+
+
+
+/*instructorSection*/
+
+.instructor-section
+{
+  width: 100%;
+}
+
+.instructor-child
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+  padding:5rem 9rem;
+}
+
+.instructor-img
+{
+  min-width: 50%;
+}
+
+.instructor-img img{
+  height: 100%;
+  width: 100%;
+}
+
+.instructor-child .left-details
+{
+  display: flex;
+  flex-direction: column;
+gap: 4rem;
+}
+
+.instructor-child .left-details .heading{
+  font-size :30px;
+  font-weight: bold;
+  width: 50%;
+}
+
+.instructor-child .left-details .para
+{
+   line-height: 1.2;
+}
+
+
+/*ExploreMore css*/
+.explore-more
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.explore-heading
+{
+  font-size: 35px;
+  font-weight: bold;
+}
+
+
+.explore-nav-type
+{
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #3e3850c5;
+  gap: 4rem;
+  padding: 2px 15px;
+  border-radius: 25px;
+  width: 60%;
+}
+
+.general
+{
+  padding: 9px 17px;
+}
+.apply-black
+{
+  background-color: black;
+  border-radius: 25px;
+}
+
+.explore-extra-div
+{
+  height: 250px;
+}
+
+.card-white
+{
+ background-color: whitesmoke;
+ color: #3f3f3f;
+}
+
+.card-black
+{
+  background-color: #3f3f3f;
+  color: whitesmoke;
+}
+
+.explore-cards
+{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 80%;
+  gap: 4rem;
+  position: absolute;
+  transform: translateY(200px);
+}
+
+.explore-card
+{
+  display: flex;
+   flex-direction: column;
+   gap: 7rem;
+   width: 450px;
+   aspect-ratio: 1;
+}
+
+.card-header
+{
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 20px ;
+}
+
+.card-footer{
+  display: flex;
+  justify-content: space-around;
+  padding-top: 10px;
+}
+
+
+.card-desc
+{
+  line-height: 1.3;
+}
+
+.card-footer
+{
+  width: 100%;
+  border-top-style: dashed;
+}
 /*Prop styles*/
 
 .position
@@ -106,6 +390,7 @@
 
 /*responsive*/
 
+/**/
 
 @media (max-width:550px) {
       .code-blocks{
@@ -151,3 +436,297 @@
     width: 100%;
   }
 }
+
+
+/*Timelinesection*/
+@media (max-width:500px) {
+  .time-line-child{
+    flex-direction: column;
+    gap: 30px;
+    padding: 5px;
+    margin-top: 70px;
+  }
+
+  
+  .time-line-abs
+{
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  background-color: rgb(2, 78, 2);
+  width: 100%;
+  color: white;
+  display: flex;
+  align-items: center;
+justify-content: center;
+ 
+}
+.time-line-abs .abs-div1
+{
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  padding-right: 1rem;
+}
+
+.time-line-abs .abs-div2
+{
+  flex-direction: column;
+  padding-left: 2rem;
+  align-items: start;
+  justify-content: center
+}
+}
+
+@media (min-width:501px) and (max-width:1200px) {
+  .time-line-child{
+    flex-direction: column;
+    gap: 30px;
+    padding: 5px;
+    margin-top: 70px;
+  }
+
+  
+  .time-line-abs
+{
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  background-color: rgb(2, 78, 2);
+  width: 100%;
+  color: white;
+  display: flex;
+  align-items: center;
+justify-content: center;
+  padding: 39px 2px;
+}
+
+.time-line-abs .number{
+  font-size: 19px;
+}
+
+.time-line-abs .abs-div1
+{
+   padding-right: 1rem;
+   border-right-style: solid;
+}
+
+.time-line-abs .abs-div2
+{
+ 
+  padding-left: 1rem;
+
+}
+
+}
+
+
+/*LearningLangiageSection and explore-more*/
+
+@media (max-width:550px) {
+  .cross-img1
+  {
+   width: 100%;
+  }
+  .cross-img3
+  {
+    width: 100%;
+  }
+
+  .cross-img2
+  {
+   width: 100%;
+  }
+
+/*explore more*/
+
+.explore-more
+{
+  gap: 10px;
+}
+
+.explore-heading
+{
+  width: 100%;
+  text-align: center;
+}
+
+
+.explore-nav-type
+{
+ display: none;
+}
+
+.general
+{
+  padding: 0px;
+}
+.apply-black
+{
+  background-color: black;
+  border-radius: 25px;
+}
+
+.explore-extra-div
+{
+  height: 200px;
+}
+
+.card-white
+{
+ background-color: whitesmoke;
+ color: #3f3f3f;
+}
+
+.card-black
+{
+  background-color: #3f3f3f;
+  color: whitesmoke;
+}
+
+.explore-cards
+{
+  display: flex;
+  align-items: center;
+  width: 97%;
+  gap: 4rem;
+  position: static;
+}
+
+.explore-card
+{
+  display: flex;
+   flex-direction: column;
+   gap: 7rem;
+   width: 450px;
+   aspect-ratio: 1;
+}
+
+.card-header
+{
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 20px ;
+}
+
+.card-footer{
+  display: flex;
+  justify-content: space-around;
+  padding-top: 10px;
+}
+
+
+.card-desc
+{
+  line-height: 1.3;
+}
+
+.card-footer
+{
+  width: 100%;
+  border-top-style: dashed;
+}
+
+
+
+}
+
+@media (max-width:1200px) {
+   .cross-imgs
+   {
+    margin-top: 50px;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 10px;
+    align-items: center;
+    justify-content: center;
+   }
+
+   .learning-language-child .heading
+{
+   text-align: center;
+   margin-bottom: 20px;
+}
+   
+}
+
+@media (min-width:1201px) {
+  .cross-img1
+  {
+    position: relative;
+   left: 7rem;
+  }
+  .cross-img2{
+    z-index: 1;
+  }
+  .cross-img3
+  {
+    right:9rem;
+    position: relative;
+    z-index: 2;
+  }
+}
+
+/*instructor section*/
+
+@media  (max-width:768px) {
+  .instructor-child
+  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 97%;
+    padding: 7px;
+  }
+  
+  .instructor-img{
+    margin-top: 40px;
+    width: 99%;
+  }
+  
+  .instructor-child.left-details
+  {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+  }
+  
+  .instructor-child .left-details .heading{
+    width:100%
+  }
+  
+  .instructor-child .left-details .para
+  {
+     line-height: 1.2;
+  }
+  
+}
+
+@media (min-width:769px) and (max-width:1200px) {
+  .instructor-child
+  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  .instructor-img{
+    margin-top: 40px;
+    width: 70%;
+  }
+
+  
+  .instructor-child .left-details .heading{
+        width: 100%;
+  }
+  
+  .instructor-child .left-details .para
+  {
+     line-height: 1.2;
+  }
+}
+
+

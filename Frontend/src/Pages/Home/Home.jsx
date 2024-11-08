@@ -4,6 +4,11 @@ import Button from '../../Components/HomePage/Button'
 import Banner from '../../assets/Images/banner.mp4'
 import CodeBlocks from '../../Components/HomePage/CodeBlocks'
 import { FaArrowRight } from 'react-icons/fa';
+import TimelineSection from '../../Components/HomePage/TimeLineSection'
+import LearningLanguageSection from '../../Components/HomePage/LearningLanguageSection'
+import InstructorSection from '../../Components/HomePage/InstructorSection'
+import ExploreMore from '../../Components/HomePage/Exploremore'
+import Footer from '../../Components/Common/Footer'
 
 
 const Home = () => {
@@ -101,6 +106,7 @@ const Home = () => {
                         codeColor={"#1fa2ff"}
                     />
                 </div>
+                <ExploreMore></ExploreMore>
             </div>
             <div className="section2">
                 <div className="ninty-five">
@@ -140,8 +146,15 @@ const Home = () => {
                         </div>
 
                     </div>
+                    <TimelineSection />
+                    <LearningLanguageSection />
                 </div>
+
             </div>
+            <div className="section3">
+                <InstructorSection />
+            </div>
+            <Footer></Footer>
         </div>
     )
 }

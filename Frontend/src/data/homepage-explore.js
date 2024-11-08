@@ -10,7 +10,7 @@ export const HomePageExplore = [
             },
             {
                 heading : "Learn CSS",
-                description : "This course explores advanced topics in HTML5 and CSS3, including animations, transitions, and layout techniques",
+                description : "This course explores and contains many and many advanced topics in HTML5 and CSS3, including animations, transitions, and layout techniques",
                 level : 'Beginner',
                 lessionNumber : 6
             },
@@ -33,7 +33,7 @@ export const HomePageExplore = [
             },
             {
                 heading : "CSS",
-                description : "This course explores advanced topics in HTML5 and CSS3, including animations, transitions, and layout techniques",
+                description : "This course explores and contains many and many advanced topics in HTML5 and CSS3, including animations, transitions, and layout techniques",
                 level : 'Beginner',
                 lessionNumber : 6
             },
@@ -56,7 +56,7 @@ export const HomePageExplore = [
             },
             {
                 heading : "Python",
-                description : "This course explores advanced topics in HTML5 and CSS3, including animations, transitions, and layout techniques",
+                description : "This course explores and contains many and many advanced topics in HTML5 and CSS3, including animations, transitions, and layout techniques",
                 level : 'Beginner',
                 lessionNumber : 6
             },
@@ -79,7 +79,7 @@ export const HomePageExplore = [
             },
             {
                 heading : "Django",
-                description : "This course explores advanced topics in HTML5 and CSS3, including animations, transitions, and layout techniques",
+                description : "This course explores and contains many and many advanced topics in HTML5 and CSS3, including animations, transitions, and layout techniques",
                 level : 'Beginner',
                 lessionNumber : 6
             },
@@ -102,7 +102,7 @@ export const HomePageExplore = [
             },
             {
                 heading : "Nuxt.js",
-                description : "This course explores advanced topics in HTML5 and CSS3, including animations, transitions, and layout techniques",
+                description : "This course explores and contains many and many advanced topics in HTML5 and CSS3, including animations, transitions, and layout techniques",
                 level : 'Beginner',
                 lessionNumber : 6
             },
