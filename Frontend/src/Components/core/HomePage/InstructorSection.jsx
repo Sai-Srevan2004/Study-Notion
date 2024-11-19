@@ -1,5 +1,5 @@
 import React from 'react'
-import Instructor from "../../assets/Images/Instructor.png"
+import Instructor from "../../../assets/Images/Instructor.png"
 import { FaArrowRight } from 'react-icons/fa'
 import Button from './Button'
 

@@ -1,13 +1,13 @@
 import React from 'react'
 import './Home.css'
-import Button from '../../Components/HomePage/Button'
+import Button from '../../Components/core/HomePage/Button'
 import Banner from '../../assets/Images/banner.mp4'
-import CodeBlocks from '../../Components/HomePage/CodeBlocks'
+import CodeBlocks from '../../Components/core/HomePage/CodeBlocks'
 import { FaArrowRight } from 'react-icons/fa';
-import TimelineSection from '../../Components/HomePage/TimeLineSection'
-import LearningLanguageSection from '../../Components/HomePage/LearningLanguageSection'
-import InstructorSection from '../../Components/HomePage/InstructorSection'
-import ExploreMore from '../../Components/HomePage/Exploremore'
+import TimelineSection from '../../Components/core/HomePage/TimeLineSection'
+import LearningLanguageSection from '../../Components/core/HomePage/LearningLanguageSection'
+import InstructorSection from '../../Components/core/HomePage/InstructorSection'
+import ExploreMore from '../../Components/core/HomePage/Exploremore'
 import Footer from '../../Components/Common/Footer'
 
 
