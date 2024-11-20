@@ -85,10 +85,10 @@ const sendOtp = async (req, res) => {
 const signUp = async (req, res) => {
     try {
         //fetch data from req.body
-        const { firstName,lastName, email, password, cpassword, accountType, otp } = req.body
-
+        const { firstName,lastName, email, password, confirmPassword, accountType, otp } = req.body
+         console.log(".........",req.body)
         //validate data
-        if (!firstName || !lastName || !email || !password || !cpassword || !otp) {
+        if (!firstName || !lastName || !email || !password || !confirmPassword || !otp) {
             return res.json({
                 success: false,
                 message: "All fileds required!"
@@ -97,7 +97,7 @@ const signUp = async (req, res) => {
 
 
         //2 passwords match
-        if (password !== cpassword) {
+        if (password !== confirmPassword) {
             return res.josn({
                 success: false,
                 message: "password and confirm password do not match"

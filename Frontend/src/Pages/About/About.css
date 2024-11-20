@@ -1,0 +1,65 @@
+.about-container {
+    margin-top: 100px;
+    color: white;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .about-section1,
+  .about-section2,
+  .about-section3,
+  .about-section5,
+  .about-reviews {
+    margin-bottom: 40px;
+    padding: 20px;
+  }
+  
+  .about-header {
+    text-align: center;
+  }
+  
+  .about-paragraph {
+    margin-top: 10px;
+    line-height: 1.6;
+  }
+  
+  .about-banner-images {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+  }
+  
+  .about-banner-images img {
+    width: 30%;
+    border-radius: 10px;
+  }
+  
+  .founding-story {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+  
+  .founding-story-left {
+    flex: 1;
+  }
+  
+  .founding-story-right img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  .vision-mission {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .vision,
+  .mission {
+    flex: 1;
+  }
+  
+  .about-section5 {
+    text-align: center;
+  }
+  

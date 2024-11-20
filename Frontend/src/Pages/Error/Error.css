@@ -1,0 +1,11 @@
+.error-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ensures full screen height */
+    font-size: 2rem; /* Adjusted for better scaling */
+    color: red;
+    background-color: #f8d7da; /* Light red background to indicate error */
+    font-weight: bold;
+  }
+  

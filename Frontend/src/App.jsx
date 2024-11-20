@@ -7,6 +7,11 @@ import Signup from './Pages/Signup/Signup'
 import Login from './Pages/Login/Login'
 import OpenRoute from './Components/core/Auth/OpenRoute'
 
+import ForgotPassword from "./Pages/ForgotPassword/ForgotPassword";
+import UpdatePassword from "./pages/UpdatePassword/UpdatePassword";
+import VerifyEmail from "./pages/VerifyEmail/VerifyEmail";
+import About from "./pages/About/About";
+
 const App = () => {
   const router=createBrowserRouter([
     {path:"/",element:<AppLayout/>,children:[
@@ -16,6 +21,18 @@ const App = () => {
       </OpenRoute>},
       {path:"/login",element:<OpenRoute>
         <Login/>
+      </OpenRoute>},
+      {path:"/forgot-password",element:<OpenRoute>
+        <ForgotPassword/>
+      </OpenRoute>},
+      {path:"/verify-email",element:<OpenRoute>
+        <VerifyEmail/>
+      </OpenRoute>},
+      {path:"/update-password/:id",element:<OpenRoute>
+        <UpdatePassword/>
+      </OpenRoute>},
+      {path:"/about",element:<OpenRoute>
+        <About/>
       </OpenRoute>}
     ]}
   ])

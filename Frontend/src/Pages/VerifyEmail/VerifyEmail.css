@@ -1,0 +1,75 @@
+/* Wrapper for centering content */
+.verify-email-wrapper {
+    min-height: calc(100vh - 3.5rem);
+    display: grid;
+    place-items: center;
+  }
+  
+  /* Form container style */
+  .verify-email-container {
+    max-width: 500px;
+    padding: 1rem 2rem;
+  }
+  
+  /* Title */
+  .verify-email-title {
+    font-size: 1.875rem;
+    font-weight: 600;
+    line-height: 2.375rem;
+    color: var(--richblack-5);
+  }
+  
+  /* Subtitle */
+  .verify-email-subtitle {
+    font-size: 1.125rem;
+    line-height: 1.625rem;
+    margin: 1rem 0;
+    color: var(--richblack-100);
+  }
+  
+  /* OTP input styling */
+  .otp-input {
+    width: 48px;
+    border: 0;
+    background-color: var(--richblack-800);
+    border-radius: 0.5rem;
+    color: var(--richblack-5);
+    text-align: center;
+    box-shadow: inset 0px -1px 0px rgba(255, 255, 255, 0.18);
+  }
+  
+  .otp-input:focus {
+    border: 0;
+    outline: 2px solid var(--yellow-50);
+  }
+  
+  /* Button styling */
+  .verify-email-btn {
+    width: 100%;
+    background-color: var(--yellow-50);
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 500;
+    color: var(--richblack-900);
+    margin-top: 1.5rem;
+  }
+  
+  /* Flex layout for Back and Resend OTP buttons */
+  .verify-email-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+  }
+  
+  .verify-email-footer p,
+  .verify-email-footer button {
+    color: var(--richblack-5);
+  }
+  
+  .verify-email-footer .resend-btn {
+    display: flex;
+    align-items: center;
+    color: var(--blue-100);
+  }
+  

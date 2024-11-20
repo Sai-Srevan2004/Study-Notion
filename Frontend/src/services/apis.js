@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:9000"
+const BASE_URL = "http://localhost:9000/api/v1"
 
 // AUTH ENDPOINTS
 export const endpoints = {
