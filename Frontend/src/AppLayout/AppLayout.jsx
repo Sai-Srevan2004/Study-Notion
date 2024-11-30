@@ -1,10 +1,12 @@
 import React from 'react'
-import HomePage from '../Pages/HomePage'
+import Navbar from '../Components/Common/Navbar'
+import { Outlet } from 'react-router-dom'
 
 const AppLayout = () => {
   return (
     <div style={{minHeight:'100vh'}} className='bg-richblack-900'>
-      <HomePage></HomePage>
+      <Navbar></Navbar>
+       <Outlet></Outlet>
     </div>
   )
 }

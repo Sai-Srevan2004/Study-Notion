@@ -1,18 +1,18 @@
 import React from 'react'
 import {FaArrowRight} from "react-icons/fa"
 import {Link} from "react-router-dom"
-import HighlightText from '../Components/Core/HomePage/HighlightText'
+import HighlightText from '../components/core/homePage/highlightText'
 
-import CTAButton from "../Components/Core/HomePage/Button"
+import CTAButton from "../components/core/HomePage/Button"
 import Banner from "../assets/Images/banner.mp4"
-import CodeBlocks from "../Components/Core/HomePage/CodeBlocks"
-import TimelineSection from '../Components/Core/HomePage/TimelineSection'
-import LearningLanguageSection from '../Components/Core/HomePage/LearningLanguageSection'
-import InstructorSection from '../Components/Core/HomePage/InstructorSection'
-import Footer from '../Components/Common/Footer'
-import ExploreMore from '../Components/Core/HomePage/ExploreMore'
+import CodeBlocks from "../components/core/HomePage/CodeBlocks"
+import TimelineSection from '../components/core/HomePage/TimelineSection'
+import LearningLanguageSection from '../components/core/HomePage/LearningLanguageSection'
+import InstructorSection from '../components/core/HomePage/InstructorSection'
+import Footer from '../components/common/Footer'
+import ExploreMore from '../components/core/HomePage/ExploreMore'
 
-const HomePage = () => {
+const Home = () => {
   return (
     <div>
       {/*Section1  */}
@@ -198,6 +198,7 @@ const HomePage = () => {
 
             <h2 className='text-center text-4xl font-semobold mt-10'>review from Other Learners</h2>
             {/* Review Slider here */}
+            
       </div>
 
 
@@ -208,4 +209,4 @@ const HomePage = () => {
   )
 }
 
-export default HomePage
+export default Home
