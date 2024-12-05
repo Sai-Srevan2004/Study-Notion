@@ -20,6 +20,7 @@ import Settings from "./components/core/Dashboard/Settings";
 import EnrolledCourses from "./components/core/Dashboard/EnrolledCourses";
 import Cart from "./components/core/Dashboard/Cart";
 import Error from "./Pages/Error";
+import AddCourse from './Components/Core/Dashboard/AddCourse'
 import { ACCOUNT_TYPE } from "./utils/constants";
 
 const App = () => {
@@ -100,7 +101,7 @@ const App = () => {
                     element: <EnrolledCourses />,
                   },
                 ]
-              : []),
+              : [{ path: "dashboard/add-course", element: <AddCourse /> },]),
           ],
         },
       ],

@@ -10,7 +10,6 @@ import { apiConnector } from '../../services/apiconnector'
 import { categories } from '../../services/apis'
 import { useState } from 'react'
 import {IoIosArrowDropdownCircle} from "react-icons/io"
-import { BASE_URL } from '../../services/apis'
 
 const subLinks = [
     {
@@ -25,7 +24,7 @@ const subLinks = [
 
 
 const Navbar = () => {
-    console.log("Printing base url: ",BASE_URL);
+    console.log("Printing base url: ",'http://localhost:9000/api/v1');
     const {token} = useSelector( (state) => state.auth );
     const {user} = useSelector( (state) => state.profile );
     const {totalItems} = useSelector( (state) => state.cart )
@@ -46,6 +45,7 @@ const Navbar = () => {
 
 
     useEffect( () => {
+        console.log("PRINTING TOKEN", token);
         fetchSublinks();
     },[] )
 

@@ -36,7 +36,7 @@ const auth = async (req, res, next) => {
 		// If there is an error during the authentication process, return 401 Unauthorized response
 		return res.json({
 			success: false,
-			message: `Something Went Wrong While Validating the Token`,
+			message: `Something Went Wrong While Validating the Token ${error.message}`,
 		});
 	}
 };
