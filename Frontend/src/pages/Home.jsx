@@ -1,12 +1,12 @@
 import React from 'react'
-import Button from '../components/core/HomePage/Button'
+import Button from '../components/core/core/HomePage/Button'
 import Banner from "../assets/Images/banner.mp4"
-import CodeBlocks from '../components/core/HomePage/CodeBlocks'
-import TimelineSection from '../components/core/HomePage/TimelineSection'
-import LearningLanguageSection from '../components/core/HomePage/LearningLanguageSection'
-import InstructorSection from '../components/core/HomePage/InstructorSection'
+import CodeBlocks from '../components/core/core/HomePage/CodeBlocks'
+import TimelineSection from '../components/core/core/HomePage/TimelineSection'
+import LearningLanguageSection from '../components/core/core/HomePage/LearningLanguageSection'
+import InstructorSection from '../components/core/core/HomePage/InstructorSection'
 import Footer from '../components/core/Common/Footer'
-import ExploreMore from '../components/core/HomePage/ExploreMore'
+import ExploreMore from '../components/core/core/HomePage/ExploreMore'
 
 
 const Home = () => {

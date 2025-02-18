@@ -62,7 +62,7 @@ const sendOtp = async (req, res) => {
 
         const OtpBody = await Otp.create(otpPayload)
 
-        console.log(OtpBody)
+        console.log("=====>",OtpBody)
 
 
         //send response
@@ -75,7 +75,8 @@ const sendOtp = async (req, res) => {
 
         return res.json({
             success: false,
-            message: "somethng wrong while sending Otp!"
+            message: "somethng wrong while sending Otp!",
+            error:error.message
         })
     }
 }

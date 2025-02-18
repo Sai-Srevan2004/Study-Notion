@@ -23,6 +23,8 @@ const mailSender=async (email,title,body)=>
         return info
     } catch (error) {
         console.log(error,"error while sending mail for otp")
+
+        throw new Error("Error sending mail")
     }
 }
 

@@ -1,7 +1,7 @@
 import React from 'react'
-import Button from "../../../components/core/HomePage/Button";
+import Button from "../../../../components/core/core/HomePage/Button";
 import { FaArrowRight } from "react-icons/fa";
-import Instructor from "../../../assets/Images/Instructor.png";
+import Instructor from "../../../../assets/Images/Instructor.png";
 
 const InstructorSection = () => {
   return (
