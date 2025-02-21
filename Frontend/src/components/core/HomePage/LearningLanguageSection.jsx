@@ -1,9 +1,9 @@
 import React from 'react'
 
-import Button from "../../../../components/core/core/HomePage/Button";
-import Know_your_progress from "../../../../assets/Images/Know_your_progress.png";
-import Compare_with_others from "../../../../assets/Images/Compare_with_others.svg";
-import Plan_your_lessons from "../../../../assets/Images/Plan_your_lessons.svg";
+import Button from "../../../components/core/HomePage/Button";
+import Know_your_progress from "../../../assets/Images/Know_your_progress.png";
+import Compare_with_others from "../../../assets/Images/Compare_with_others.svg";
+import Plan_your_lessons from "../../../assets/Images/Plan_your_lessons.svg";
 
 const LearningLanguageSection = () => {
   return (

@@ -248,6 +248,7 @@ const login = async (req, res) => {
 
 
      } catch (error) {
+        console.log("//////",error.message)
         return res.json({
             success:false,
             message:"Login failed! please try Again later!"
