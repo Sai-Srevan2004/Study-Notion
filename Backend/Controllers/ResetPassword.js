@@ -1,8 +1,8 @@
-const User = require("../Models/Users")
-const mailSender = require("../Utils/mailSender")
+const User = require("../models/User")
+const mailSender = require("../utils/mailSender")
 const bcrypt = require("bcrypt")
 const crypto = require("crypto")
-const resetPasswordToken = async (req, res) => {
+exports.resetPasswordToken = async (req, res) => {
   try {
     const email = req.body.email
     const user = await User.findOne({ email: email })
@@ -24,7 +24,8 @@ const resetPasswordToken = async (req, res) => {
     )
     console.log("DETAILS", updatedDetails)
 
-    const url = `http://localhost:5173/update-password/${token}`
+    // const url = `http://localhost:3000/update-password/${token}`
+    const url = `https://studynotion-edtech-project.vercel.app/update-password/${token}`
 
     await mailSender(
       email,
@@ -36,7 +37,6 @@ const resetPasswordToken = async (req, res) => {
       success: true,
       message:
         "Email Sent Successfully, Please Check Your Email to Continue Further",
-        token:token
     })
   } catch (error) {
     return res.json({
@@ -47,7 +47,7 @@ const resetPasswordToken = async (req, res) => {
   }
 }
 
-const resetPassword = async (req, res) => {
+exports.resetPassword = async (req, res) => {
   try {
     const { password, confirmPassword, token } = req.body
 
@@ -65,7 +65,7 @@ const resetPassword = async (req, res) => {
       })
     }
     if (!(userDetails.resetPasswordExpires > Date.now())) {
-      return res.json({
+      return res.status(403).json({
         success: false,
         message: `Token is Expired, Please Regenerate Your Token`,
       })
@@ -88,6 +88,3 @@ const resetPassword = async (req, res) => {
     })
   }
 }
-
-
-module.exports={resetPassword,resetPasswordToken}
