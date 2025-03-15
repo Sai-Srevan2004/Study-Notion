@@ -5,13 +5,18 @@ import { useNavigate } from "react-router-dom"
 
 import { sidebarLinks } from "../../../data/dashboard-links"
 import { logout } from "../../../services/operations/authAPI"
-import ConfirmationModal from "../../common/ConfirmationModel"
+import ConfirmationModal from "../../Common/ConfirmationModel"
 import SidebarLink from "./SidebarLink"
 
 export default function Sidebar() {
+
+  console.log(sidebarLinks,";;;;;;;;;;;;;;;;;;;;;;;;;;")
   const { user, loading: profileLoading } = useSelector(
     (state) => state.profile
   )
+
+  console.log(user,"oiuytdfshjkl;k")
+
   const { loading: authLoading } = useSelector((state) => state.auth)
   const dispatch = useDispatch()
   const navigate = useNavigate()

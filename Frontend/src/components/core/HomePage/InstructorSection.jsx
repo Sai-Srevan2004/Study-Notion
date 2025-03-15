@@ -1,7 +1,8 @@
 import React from 'react'
-import Button from "../../../components/core/HomePage/Button";
+import CTAButton from "../../../components/core/HomePage/Button";
 import { FaArrowRight } from "react-icons/fa";
 import Instructor from "../../../assets/Images/Instructor.png";
+import HighlightText from './HighlightText';
 
 const InstructorSection = () => {
   return (
@@ -17,7 +18,7 @@ const InstructorSection = () => {
           <div className="lg:w-[50%] flex gap-10 flex-col">
             <h1 className="lg:w-[50%] text-4xl font-semibold ">
               Become an
-              instructor
+              <HighlightText text={"instructor"} />
             </h1>
 
             <p className="font-medium text-[16px] text-justify w-[90%] text-richblack-300">
@@ -27,8 +28,12 @@ const InstructorSection = () => {
             </p>
 
             <div className="w-fit">
-              <Button active={true} linkto={"/signup"} value={"Start Teaching Today"}>
-              </Button>
+              <CTAButton active={true} linkto={"/signup"}>
+                <div className="flex items-center gap-3">
+                  Start Teaching Today
+                  <FaArrowRight />
+                </div>
+              </CTAButton>
             </div>
           </div>
         </div>

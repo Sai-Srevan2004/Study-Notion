@@ -1,34 +1,60 @@
-import React from 'react'
-import Button from '../components/core/HomePage/Button'
+// Icons Import
+import { FaArrowRight } from "react-icons/fa"
+import { Link } from "react-router-dom"
+
+// Image and Video Import
 import Banner from "../assets/Images/banner.mp4"
-import CodeBlocks from '../components/core/HomePage/CodeBlocks'
-import TimelineSection from '../components/core/HomePage/TimelineSection'
-import LearningLanguageSection from '../components/core/HomePage/LearningLanguageSection'
-import InstructorSection from '../components/core/HomePage/InstructorSection'
-import Footer from '../components/common/Footer'
-import ExploreMore from '../components/core/HomePage/ExploreMore'
+// Component Imports
+import Footer from "../components/Common/Footer"
+import ReviewSlider from "../components/Common/ReviewSlider"
+import CTAButton from "../components/core/HomePage/Button"
+import CodeBlocks from "../components/core/HomePage/CodeBlocks"
+import ExploreMore from "../components/core/HomePage/ExploreMore"
+import HighlightText from "../components/core/HomePage/HighlightText"
+import InstructorSection from "../components/core/HomePage/InstructorSection"
+import LearningLanguageSection from "../components/core/HomePage/LearningLanguageSection"
+import TimelineSection from "../components/core/HomePage/Timeline"
 
-
-const Home = () => {
+function Home() {
   return (
     <div>
-      {/**div1 */}
-      <div className='w-10/12 mx-auto'>
-        {/* Section1 */}
-        <div className='flex flex-col justify-center items-center gap-8 text-white mt-9'>
-          <div className='bg-blue-700 border-solid border-black rounded-[30px] px-3 py-1'>
-            <p>Become an Instructor</p>
+      {/* Section 1 */}
+      <div className="relative mx-auto flex w-11/12 max-w-maxContent flex-col items-center justify-between gap-8 text-white">
+        {/* Become a Instructor Button */}
+        <Link to={"/signup"}>
+          <div className="group mx-auto mt-16 w-fit rounded-full bg-richblack-800 p-1 font-bold text-richblack-200 drop-shadow-[0_1.5px_rgba(255,255,255,0.25)] transition-all duration-200 hover:scale-95 hover:drop-shadow-none">
+            <div className="flex flex-row items-center gap-2 rounded-full px-10 py-[5px] transition-all duration-200 group-hover:bg-richblack-900">
+              <p>Become an Instructor</p>
+              <FaArrowRight />
+            </div>
           </div>
-          <h1 className='text-4xl'>Empower Your Future with Coding Skills</h1>
-          <p className='max-w-maxContent w-[70%] text-center'>With our online coding courses, you can learn at your own pace, from anywhere in the world, and get access to a wealth of resources, including hands-on projects, quizzes, and personalized feedback from instructors.</p>
-          <div className='flex items-center justify-center gap-9'>
-            <Button value={"Learn more"} active={true} linkto={'/signup'}></Button>
-            <Button value={"Book a Demo"} active={false} linkto={'/signup'}></Button>
+        </Link>
 
-          </div>
+        {/* Heading */}
+        <div className="text-center text-4xl font-semibold">
+          Empower Your Future with
+          <HighlightText text={"Coding Skills"} />
         </div>
 
-        {/* Section2 */}
+        {/* Sub Heading */}
+        <div className="-mt-3 w-[90%] text-center text-lg font-bold text-richblack-300">
+          With our online coding courses, you can learn at your own pace, from
+          anywhere in the world, and get access to a wealth of resources,
+          including hands-on projects, quizzes, and personalized feedback from
+          instructors.
+        </div>
+
+        {/* CTA Buttons */}
+        <div className="mt-8 flex flex-row gap-7">
+          <CTAButton active={true} linkto={"/signup"}>
+            Learn More
+          </CTAButton>
+          <CTAButton active={false} linkto={"/login"}>
+            Book a Demo
+          </CTAButton>
+        </div>
+
+        {/* Video */}
         <div className="mx-3 my-7 shadow-[10px_-5px_50px_-5px] shadow-blue-200">
           <video
             className="shadow-[20px_20px_rgba(255,255,255)]"
@@ -39,14 +65,15 @@ const Home = () => {
             <source src={Banner} type="video/mp4" />
           </video>
         </div>
-        {/* Section3 */}
+
+        {/* Code Section 1  */}
         <div>
           <CodeBlocks
             position={"lg:flex-row"}
             heading={
               <div className="text-4xl font-semibold">
                 Unlock your
-                coding potential with our online
+                <HighlightText text={"coding potential"} /> with our online
                 courses.
               </div>
             }
@@ -69,12 +96,14 @@ const Home = () => {
           />
         </div>
 
+        {/* Code Section 2 */}
         <div>
           <CodeBlocks
             position={"lg:flex-row-reverse"}
             heading={
               <div className="w-[100%] text-4xl font-semibold lg:w-[50%]">
-                Start coding in secs
+                Start
+                <HighlightText text={"coding in seconds"} />
               </div>
             }
             subheading={
@@ -92,33 +121,40 @@ const Home = () => {
             }}
             codeColor={"text-white"}
             codeblock={`import React from "react";\n import CTAButton from "./Button";\nimport TypeAnimation from "react-type";\nimport { FaArrowRight } from "react-icons/fa";\n\nconst Home = () => {\nreturn (\n<div>Home</div>\n)\n}\nexport default Home;`}
+            backgroundGradient={<div className="codeblock2 absolute"></div>}
           />
         </div>
+
+        {/* Explore Section */}
         <ExploreMore />
       </div>
-      {/**div2 */}
 
+      {/* Section 2 */}
       <div className="bg-pure-greys-5 text-richblack-700">
         <div className="homepage_bg h-[320px]">
           {/* Explore Full Catagory Section */}
           <div className="mx-auto flex w-11/12 max-w-maxContent flex-col items-center justify-between gap-8">
             <div className="lg:h-[150px]"></div>
             <div className="flex flex-row gap-7 text-white lg:mt-8">
-              <Button active={true} linkto={"/signup"} value={"Explore full catelog"}>
-
-              </Button>
-              <Button active={false} linkto={"/login"} value={"Learn more"}>
-              </Button>
+              <CTAButton active={true} linkto={"/signup"}>
+                <div className="flex items-center gap-2">
+                  Explore Full Catalog
+                  <FaArrowRight />
+                </div>
+              </CTAButton>
+              <CTAButton active={false} linkto={"/login"}>
+                Learn More
+              </CTAButton>
             </div>
           </div>
         </div>
 
-        <div className="mx-auto flex w-11/12 max-w-maxContent flex-col gap-8">
+        <div className="mx-auto flex w-11/12 max-w-maxContent flex-col items-center justify-between gap-8 ">
           {/* Job that is in Demand - Section 1 */}
-          <div className="mb-10  flex justify-between gap-7 lg:mt-20 lg:flex-row lg:gap-0">
+          <div className="mb-10 mt-[-100px] flex flex-col justify-between gap-7 lg:mt-20 lg:flex-row lg:gap-0">
             <div className="text-4xl font-semibold lg:w-[45%] ">
               Get the skills you need for a{" "}
-              job that is in demand.
+              <HighlightText text={"job that is in demand."} />
             </div>
             <div className="flex flex-col items-start gap-10 lg:w-[40%]">
               <div className="text-[16px]">
@@ -126,8 +162,9 @@ const Home = () => {
                 be a competitive specialist requires more than professional
                 skills.
               </div>
-              <Button active={true} linkto={"/signup"} value={"Learn more"}>
-              </Button>
+              <CTAButton active={true} linkto={"/signup"}>
+                <div className="">Learn More</div>
+              </CTAButton>
             </div>
           </div>
 
@@ -138,19 +175,22 @@ const Home = () => {
           <LearningLanguageSection />
         </div>
       </div>
+
+      {/* Section 3 */}
       <div className="relative mx-auto my-20 flex w-11/12 max-w-maxContent flex-col items-center justify-between gap-8 bg-richblack-900 text-white">
-          {/* Become a instructor section */}
-          <InstructorSection />
+        {/* Become a instructor section */}
+        <InstructorSection />
 
-          {/* Reviws from Other Learner */}
-          <h1 className="text-center text-4xl font-semibold mt-8">
-            Reviews from other learners
-          </h1>
-          {/* <ReviewSlider /> */}
-        </div>
-        <Footer />
+        {/* Reviws from Other Learner */}
+        <h1 className="text-center text-4xl font-semibold mt-8">
+          Reviews from other learners
+        </h1>
+        <ReviewSlider />
+      </div>
+
+      {/* Footer */}
+      <Footer />
     </div>
-
   )
 }
 

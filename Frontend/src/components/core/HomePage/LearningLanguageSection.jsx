@@ -1,6 +1,6 @@
 import React from 'react'
-
-import Button from "../../../components/core/HomePage/Button";
+import HighlightText from './HighlightText'
+import CTAButton from "../../../components/core/HomePage/Button";
 import Know_your_progress from "../../../assets/Images/Know_your_progress.png";
 import Compare_with_others from "../../../assets/Images/Compare_with_others.svg";
 import Plan_your_lessons from "../../../assets/Images/Plan_your_lessons.svg";
@@ -10,7 +10,7 @@ const LearningLanguageSection = () => {
     <div>
         <div className="text-4xl font-semibold text-center my-10">
             Your swiss knife for
-            learning any language
+            <HighlightText text={"learning any language"} />
             <div className="text-center text-richblack-700 font-medium lg:w-[75%] mx-auto leading-6 text-base mt-3">
               Using spin making learning multiple languages easy. with 20+
               languages realistic voice-over, progress tracking, custom schedule
@@ -36,9 +36,9 @@ const LearningLanguageSection = () => {
           </div>
 
           <div className="w-fit mx-auto lg:mb-20 mb-8 -mt-5">
-            <Button active={true} linkto={"/signup"} value={"Learn more!"}>
-              
-            </Button>
+            <CTAButton active={true} linkto={"/signup"}>
+              <div className="">Learn More</div>
+            </CTAButton>
           </div>
     </div>
   )
