@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react'
 import logo from "../../assets/Logo/Logo-Full-Light.png"
+import { Link, matchPath } from 'react-router-dom'
 import {NavbarLinks} from "../../data/navbar-links"
-import { NavLink,Link } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import {AiOutlineShoppingCart} from "react-icons/ai"
 import ProfileDropDown from '../core/Auth/ProfileDropDown'
@@ -9,7 +10,6 @@ import { apiConnector } from '../../services/apiconnector'
 import { categories } from '../../services/apis'
 import { useState } from 'react'
 import {IoIosArrowDropdownCircle} from "react-icons/io"
-
 
 const subLinks = [
     {
@@ -28,6 +28,7 @@ const Navbar = () => {
     const {token} = useSelector( (state) => state.auth );
     const {user} = useSelector( (state) => state.profile );
     const {totalItems} = useSelector( (state) => state.cart )
+    const location = useLocation();
 
     const [ssubLinks, setSsubLinks]  = useState([]);
 
@@ -44,8 +45,15 @@ const Navbar = () => {
 
 
     useEffect( () => {
+        console.log("PRINTING TOKEN", token);
         fetchSublinks();
     },[] )
+
+
+
+    const matchRoute = (route) => {
+        return matchPath({path:route}, location.pathname);
+    }
 
   return (
     <div className='flex h-14 items-center justify-center border-b-[1px] border-b-richblack-700'>
@@ -82,9 +90,9 @@ const Navbar = () => {
                                 {
                                     subLinks.length ? (
                                             subLinks.map( (subLink, index) => (
-                                                <NavLink to={`${subLink.link}`} key={index}>
+                                                <Link to={`${subLink.link}`} key={index}>
                                                     <p>{subLink.title}</p>
-                                                </NavLink>
+                                                </Link>
                                             ) )
                                     ) : (<div></div>)
                                 }
@@ -95,12 +103,12 @@ const Navbar = () => {
                             </div>
 
                         ) : (
-                            <NavLink to={link?.path}>
-                                <p>
+                            <Link to={link?.path}>
+                                <p className={`${ matchRoute(link?.path) ? "text-yellow-25" : "text-richblack-25"}`}>
                                     {link.title}
                                 </p>
                                 
-                            </NavLink>
+                            </Link>
                         )
                     }
                 </li>
